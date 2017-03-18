@@ -11,8 +11,11 @@ var options = {
   cert: fs.readFileSync('./node_modules/http2/example/localhost.crt')
 };
 
+app.use(express.static('public'));
+
 app.get('/', function (req, res) {
-  res.send('Hello World');
+  //res.send('Hello World');
+  res.redirect('/main.html');
 });
 
 http2.createServer(options, app).listen(3001);
