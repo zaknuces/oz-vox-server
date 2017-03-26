@@ -1,0 +1,3 @@
+class DevSession {
+  constructor () {}
+}
