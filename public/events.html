@@ -6,9 +6,20 @@
     <script type="text/javascript" src="js/DevSession.js"></script>
     <script type="text/javascript" src="js/events/Event.js"></script>
     <script type="text/javascript" src="js/events/EventManager.js"></script>
+
+    <script>
+      function showtimes() {
+        // TODO: should be part of Application object
+        var times = 'DOM loaded: ' + (window.performance.timing.domContentLoadedEventEnd - window.performance.timing.navigationStart) + 'ms, '
+      	times += 'DOM complete (all loaded): ' + (window.performance.timing.domComplete - window.performance.timing.navigationStart) + 'ms, '
+      	times += 'Load event fired: ' + (window.performance.timing.loadEventStart - window.performance.timing.navigationStart) + 'ms'
+      	document.getElementById('loadtimes').innerHTML = times
+      }
+    </script>
   </head>
-  <body>
+  <body onload="showtimes()">
     <div class="vox-header"> List of Upcoming Events </div>
+    <div id="loadtimes"></div>
     <div class="event-list">TODO: some list </div>
     <a class="option home" href="main.html">Home</a>
   </body>
