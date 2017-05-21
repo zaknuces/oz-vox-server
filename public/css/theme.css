@@ -1,4 +1,11 @@
-.vox-header {
-  font-size: 18px;
-  color: blue;
+html {
+  background: url(../images/Building.jpg) no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+body {
+  background-color: transparent !important;
 }

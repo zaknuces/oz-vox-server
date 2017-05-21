@@ -5,6 +5,9 @@ const http2 = require('http2');
 const morgan = require('morgan');
 const path = require('path');
 
+const eventsRoute = require('./src/events');
+const dashboardRoute = require('./src/dashboard');
+
 // Create Express Application
 const app = express();
 
@@ -43,28 +46,14 @@ app
     stream: accessLogStream
   }))
   .use(express.static('public'))
+  .use('/bootstrap', express.static(__dirname + '/node_modules/bootstrap/dist/'))
+  .use('/jquery', express.static(__dirname + '/node_modules/jquery/dist/'))
+
+
   .get('/', (req, res) => {
-    res.redirect('/main.html');
+    return dashboardRoute.getData(req, res);
   })
+
   .get('/events', (req, res) => {
-    if (res.push) {
-      let eventFilePath = path.join(__dirname, 'public', '/js/events/Event.js');
-      res
-        .push('/js/events/Event.js', {})
-        .end(fs.readFileSync(eventFilePath));
-
-      let eventManagerFilePath = path.join(__dirname, 'public', '/js/events/EventManager.js');
-      res
-        .push('/js/events/EventManager.js', {})
-        .end(fs.readFileSync(eventManagerFilePath));
-
-      let eventCssFilePath = path.join(__dirname, 'public', '/css/events.css');
-      res
-        .push('/css/events.css', {})
-        .end(fs.readFileSync(eventCssFilePath));
-    }
-
-    let eventHTMLPath = path.join(__dirname, 'public', '/events.html');
-    res.write(fs.readFileSync(eventHTMLPath));
-    res.end();
+    return eventsRoute.getData(req, res);
   });

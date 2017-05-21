@@ -1,6 +1,17 @@
 <html>
   <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="stylesheet" type="text/css" href="/bootstrap/css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="/bootstrap/css/bootstrap-theme.css">
+
     <link rel="stylesheet" type="text/css" href="css/theme.css">
+
+    <script type="text/javascript" src="jquery/jquery.js"></script>
+    <script type="text/javascript" src="bootstrap/js/bootstrap.js"></script>
+
     <script type="text/javascript" src="js/Application.js"></script>
     <script type="text/javascript" src="js/Configuration.js"></script>
     <script>
@@ -14,11 +25,71 @@
     </script>
   </head>
   <body onload="showtimes()">
-    <div class="vox-header"> Hello World. </div>
-    <div id="loadtimes"></div>
+    <div class="page-header">
+      <h1>High Performance Web Apps Using Http 2 <small>by Owais Zahid</small></h1>
+    </div>
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-md-10">
+          <div class="panel panel-primary">
+            <!-- Default panel contents -->
+            <div class="panel-heading">Test Scenarios</div>
+            <div class="panel-body">
+              <p>1. Load Test</p>
+              <p>2. Caching Scenario </p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-4">
+          <div class="panel panel-info">
+            <!-- Default panel contents -->
+            <div class="panel-heading">HTTP 2 Samples</div>
+            <!-- List group -->
+            <div class="list-group">
+              <a href="https://http2.golang.org/gophertiles" class="list-group-item">Image Tiles Test</a>
+              <a href="https://http2.golang.org/serverpush" class="list-group-item">Server Push</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="panel panel-info">
+            <!-- Default panel contents -->
+            <div class="panel-heading">Banchmarks and Specifications</div>
+            <!-- List group -->
+            <div class="list-group">
+              <a href="https://http2.github.io/http2-spec" class="list-group-item">HTTP 2 Specifications</a>
+              <a href="https://github.com/http2/http2-spec/wiki/Implementations" class="list-group-item">HTTP 2 Implementation Details</a>
+              <a href="http://kpdecker.github.io/six-speed/" class="list-group-item">Six Speed tests (ES6 vs ES6 Polyfills)</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="panel panel-info">
+            <!-- Default panel contents -->
+            <div class="panel-heading">Useful Links</div>
+            <!-- List group -->
+            <div class="list-group">
+              <a href="https://github.com/zaknuces/oz-vox-server" class="list-group-item">Source Code</a>
+              <a href="https://hpbn.co/http2/" class="list-group-item">Ilya Grigorik's High Performance Browser Networking</a>
+              <a href="https://www.youtube.com/watch?v=J_BxVEOVRNw" class="list-group-item">Guy Bedford's talk on HTTP 2</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <nav class="navbar navbar-default navbar-fixed-bottom">
+      <div class="container-fluid">
+        <span class="navbar-text"> Page Statistics : </span>
+        <span id="loadtimes" class="navbar-text"></span>
+      </div>
+    </nav>
+    <!--
     <img src="images/singapore.jpeg" alt="SG" width="400" height="300"/>
     <a class="option dev-session" href="devSessionList.html">List of Topics</a>
     <br/>
     <a class="option events" href="events">List of Upcoming Events</a>
+    -->
   </body>
 </html>

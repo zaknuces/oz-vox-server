@@ -9,9 +9,11 @@
   "author": "Owais Zahid",
   "license": "ISC",
   "dependencies": {
+    "bootstrap": "^3.3.7",
     "express": "^5.0.0-alpha.5",
     "express-http2-workaround": "^1.1.2",
     "http2": "^3.3.6",
+    "jquery": "^3.2.1",
     "morgan": "^1.8.1"
   }
 }
