@@ -2,6 +2,7 @@ const fs = require('fs');
 const path = require('path');
 
 module.exports = {
+  // TODO: documentation.
   getData: (req, res) => {
     if (res.push) {
       let eventFilePath = path.join(__dirname, '/../public', '/js/events/Event.js');

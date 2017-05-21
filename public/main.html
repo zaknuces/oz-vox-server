@@ -13,7 +13,6 @@
     <script type="text/javascript" src="bootstrap/js/bootstrap.js"></script>
 
     <script type="text/javascript" src="js/Application.js"></script>
-    <script type="text/javascript" src="js/Configuration.js"></script>
     <script>
       function showtimes() {
         // TODO: should be part of Application object
@@ -34,9 +33,9 @@
           <div class="panel panel-primary">
             <!-- Default panel contents -->
             <div class="panel-heading">Test Scenarios</div>
-            <div class="panel-body">
-              <p>1. Load Test</p>
-              <p>2. Caching Scenario </p>
+            <div class="list-group">
+              <a href="/loadTest.html" class="list-group-item">Load Test</a>
+              <a href="https://http2.golang.org/serverpush" class="list-group-item">Server Push</a>
             </div>
           </div>
         </div>
@@ -85,11 +84,5 @@
         <span id="loadtimes" class="navbar-text"></span>
       </div>
     </nav>
-    <!--
-    <img src="images/singapore.jpeg" alt="SG" width="400" height="300"/>
-    <a class="option dev-session" href="devSessionList.html">List of Topics</a>
-    <br/>
-    <a class="option events" href="events">List of Upcoming Events</a>
-    -->
   </body>
 </html>

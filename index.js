@@ -4,6 +4,7 @@ const http = require('http');
 const http2 = require('http2');
 const morgan = require('morgan');
 const path = require('path');
+const randomQuote = require('random-quote');
 
 const eventsRoute = require('./src/events');
 const dashboardRoute = require('./src/dashboard');
@@ -56,4 +57,9 @@ app
 
   .get('/events', (req, res) => {
     return eventsRoute.getData(req, res);
+  })
+
+  .get('/quote', (req, res) => {
+    randomQuote()
+      .then(quote => res.json(quote));
   });

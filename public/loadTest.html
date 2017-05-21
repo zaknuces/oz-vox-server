@@ -1,0 +1,83 @@
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="stylesheet" type="text/css" href="/bootstrap/css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="/bootstrap/css/bootstrap-theme.css">
+
+    <link rel="stylesheet" type="text/css" href="css/theme.css">
+
+    <script type="text/javascript" src="jquery/jquery.js"></script>
+    <script type="text/javascript" src="bootstrap/js/bootstrap.js"></script>
+
+    <script type="text/javascript" src="js/Application.js"></script>
+    <script>
+      // TODO: documentation.
+      function setUp() {
+        var application = new Application();
+        $('#submitBtn').on('click', application.clickEventHandler.bind(application));
+      }
+    </script>
+  </head>
+  <body onload="setUp()">
+    <nav class="navbar navbar-default">
+      <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand glyphicon glyphicon-home" href="/">Home</a>
+        </div>
+      </div>
+    </nav>
+    <div class="page-header">
+      <h1>1: Load Test</h1>
+    </div>
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-md-6">
+          <div class="panel panel-primary">
+            <!-- Default panel contents -->
+            <div class="panel-heading">Choose Test Scenario</div>
+            <div class="panel-body">
+              <input type="radio" name="quantity" value="100" checked> 100 items<br>
+              <input type="radio" name="quantity" value="200"> 200 items<br>
+              <input type="radio" name="quantity" value="1000"> 300 items<br>
+              <button id="submitBtn" class="btn btn-default" type="submit">Fetch Quotations</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-10">
+          <div class="panel panel-info">
+            <!-- Default panel contents -->
+            <div class="panel-heading">Results:</div>
+            <table id="resultTable" class="table table-striped">
+              <thead>
+                <tr>
+                  <th>#</th>
+                  <th>Description</th>
+                </tr>
+              </thead>
+              <tbody>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+    <nav class="navbar navbar-default navbar-fixed-bottom">
+      <div class="container-fluid">
+        <span class="navbar-text"> Page Statistics : </span>
+        <span id="loadtimes" class="navbar-text"></span>
+      </div>
+    </nav>
+  </body>
+</html>
