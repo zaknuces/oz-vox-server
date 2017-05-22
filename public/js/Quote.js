@@ -1,5 +1,5 @@
 // TODO: documentation.
-class Application {
+class Quote {
   constructor() {}
 
   clickEventHandler(event) {

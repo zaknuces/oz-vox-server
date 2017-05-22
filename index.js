@@ -46,6 +46,7 @@ app
   .use(morgan('combined', {
     stream: accessLogStream
   }))
+  //.use(express.static('public', { maxAge: 86400000 /* 1d */ }))
   .use(express.static('public'))
   .use('/bootstrap', express.static(__dirname + '/node_modules/bootstrap/dist/'))
   .use('/jquery', express.static(__dirname + '/node_modules/jquery/dist/'))
@@ -62,4 +63,49 @@ app
   .get('/quote', (req, res) => {
     randomQuote()
       .then(quote => res.json(quote));
+  })
+
+  .get('/travelLogs', (req, res) => {
+    console.log(req.query);
+    if (req.query && req.query.serverPush !== undefined && res.push) {
+      console.log('Serve Push resources');
+      let imageFilePath = path.join(__dirname, '/public', '/images/porto1.jpg');
+      res
+        .push('/images/porto1.jpg', {})
+        .end(fs.readFileSync(imageFilePath));
+
+      imageFilePath = path.join(__dirname, '/public', '/images/porto2.jpg');
+      res
+        .push('/images/porto2.jpg', {})
+        .end(fs.readFileSync(imageFilePath));
+
+      imageFilePath = path.join(__dirname, '/public', '/images/porto3.jpg');
+      res
+        .push('/images/porto3.jpg', {})
+        .end(fs.readFileSync(imageFilePath));
+
+      imageFilePath = path.join(__dirname, '/public', '/images/porto4.jpg');
+      res
+        .push('/images/porto4.jpg', {})
+        .end(fs.readFileSync(imageFilePath));
+
+      imageFilePath = path.join(__dirname, '/public', '/images/porto5.jpg');
+      res
+        .push('/images/porto5.jpg', {})
+        .end(fs.readFileSync(imageFilePath));
+    }
+    res.json([{
+      details: "Trip to Porto, Protugal",
+      images: [{
+        url: 'images/porto1.jpg'
+      }, {
+        url: 'images/porto2.jpg'
+      }, {
+        url: 'images/porto3.jpg'
+      }, {
+        url: 'images/porto4.jpg'
+      }, {
+        url: 'images/porto5.jpg'
+      }]
+    }])
   });
