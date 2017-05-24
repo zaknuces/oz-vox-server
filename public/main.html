@@ -15,11 +15,8 @@
     <script type="text/javascript" src="js/Application.js"></script>
     <script>
       function showtimes() {
-        // TODO: should be part of Application object
-      	var times = 'DOM loaded: ' + (window.performance.timing.domContentLoadedEventEnd - window.performance.timing.navigationStart) + 'ms, '
-      	times += 'DOM complete (all loaded): ' + (window.performance.timing.domComplete - window.performance.timing.navigationStart) + 'ms, '
-      	times += 'Load event fired: ' + (window.performance.timing.loadEventStart - window.performance.timing.navigationStart) + 'ms'
-      	document.getElementById('loadtimes').innerHTML = times
+      	let app = new Application();
+      	document.getElementById('loadtimes').innerHTML = app.generatePageStatistics();
       }
     </script>
   </head>

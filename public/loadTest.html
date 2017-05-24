@@ -14,10 +14,10 @@
 
     <script type="text/javascript" src="js/Quote.js"></script>
     <script>
-      // TODO: documentation.
+      // Function to be call on page load.
       function setUp() {
         var quoteDataModel = new Quote();
-        $('#submitBtn').on('click', application.clickEventHandler.bind(quoteDataModel));
+        $('#submitBtn').on('click', quoteDataModel.clickEventHandler.bind(quoteDataModel));
       }
     </script>
   </head>
