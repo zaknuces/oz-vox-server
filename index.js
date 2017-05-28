@@ -4,8 +4,8 @@ const http = require('http');
 const http2 = require('http2');
 const morgan = require('morgan');
 const path = require('path');
+var compression = require('compression');
 
-const eventsRoute = require('./src/events');
 const dashboardRoute = require('./src/dashboard');
 const quotesRoute = require('./src/quotes');
 const travelLogsRoute = require('./src/travelLogs');
@@ -47,6 +47,7 @@ app
 	.use(morgan('combined', {
 		stream: accessLogStream
 	}))
+	.use(compression({level: 1}))
 	.use(express.static('public'))
 	.use('/bootstrap', express.static(__dirname + '/node_modules/bootstrap/dist/'))
 	.use('/jquery', express.static(__dirname + '/node_modules/jquery/dist/'))
