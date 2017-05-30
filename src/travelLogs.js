@@ -43,7 +43,7 @@ module.exports = {
 			stream.on('error', err => {
 					console.log(err.message);
 			})
-			stream.end(fs.readFileSync(imageFilePath));*/
+			stream.end(fs.readFileSync(imageFilePath));
 
 			imageFilePath = path.join(__dirname, '../public', '/images/porto3.jpg');
 			stream = res.push('/images/porto3.jpg', {
@@ -59,8 +59,8 @@ module.exports = {
 			stream.on('error', err => {
 					console.log(err.message);
 			})
-			stream.end(fs.readFileSync(imageFilePath));*/
-
+			stream.end(fs.readFileSync(imageFilePath));
+			
 			imageFilePath = path.join(__dirname, '../public', '/images/porto4.jpg');
 			stream = res.push('/images/porto4.jpg', {
 				status: 200,
