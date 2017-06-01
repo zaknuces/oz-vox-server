@@ -7,7 +7,7 @@ module.exports = {
 	 */
 	getData: (req, res) => {
 		if (res.push && req.query && req.query.serverPush !== undefined) {
-			console.log('Serve Push resources');
+			console.log('Server Push resources');
 
 			let imageFilePath = path.join(__dirname, '../public', '/images/porto1.jpg');
 			let stream = res.push('/images/porto1.jpg', {
@@ -60,7 +60,7 @@ module.exports = {
 					console.log(err.message);
 			})
 			stream.end(fs.readFileSync(imageFilePath));
-			
+
 			imageFilePath = path.join(__dirname, '../public', '/images/porto4.jpg');
 			stream = res.push('/images/porto4.jpg', {
 				status: 200,
